@@ -4,14 +4,12 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Author;
-use App\Models\Book;
 
 class AuthorController extends Controller
 {
     public function index(){
         $authors = Author::all();
-        $books = Book::all();
-        return view('authors', compact('authors', 'books'));
+        return view('authors', compact('authors'));
     }
 
     public function create(){
@@ -22,8 +20,6 @@ class AuthorController extends Controller
         $author = new Author();
         $author->name = $request->name;
         $author->born_date = $request->born_date;
-        $author->quant_books = $request->quant_books;
-        $author->id_book = $request->id_book;
 
         $author->save();
 
@@ -42,17 +38,14 @@ class AuthorController extends Controller
     }
 
     public function edit($id){
-        $books = Book::All();
         $author = Author::find($id);
-        return view('authors_edit', compact('author', 'books'));
+        return view('authors_edit', compact('author'));
     }
 
     public function update(Request $request, $id){
         $author = Author::find($id);
         $author->name = $request->name;
         $author->born_date = $request->born_date;
-        $author->quant_books = $request->quant_books;
-        $author->id_book = $request->id_book;
 
         $author->save();
         

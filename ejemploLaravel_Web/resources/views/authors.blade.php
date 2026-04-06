@@ -20,19 +20,6 @@
                 <input type="date" name="born_date" id="a2">
                 <br>
 
-                <label for="a3">Ingrese el número de libros: </label>
-                <input type="number" name="quant_books" id="a3">
-                <br>
-                
-                <label for="a4">Libro referenciado</label>
-                <select name="id_book" id="a4">
-                    <option value="">~~Seleccione una opción~~</option>
-                    @foreach ($books as $book)
-                    <option value="{{$book->id}}">{{$book->name}}</option>
-                    @endforeach
-                </select>
-                <br>
-
                 <button class="btn btn-success" type="submit">Guardar autor</button>
             </form>
         </div>
@@ -44,8 +31,6 @@
                     <th>Id</th>
                     <th>Nombre</th>
                     <th>Fecha de nacimiento</th>
-                    <th>Cantidad de libros</th>
-                    <th>Id Libro</th>
                     <th>Opciones</th>
                 </tr>
             </thead>
@@ -55,8 +40,6 @@
                     <td>{{$author->id}}</td>
                     <td>{{$author->name}}</td>
                     <td>{{$author->born_date}}</td>
-                    <td>{{$author->quant_books}}</td>
-                    <td>{{$author->id_book}}</td>
                     <td>
                         <a href="{{route('authors.edit', $author->id)}}" class="btn btn-primary">Editar</a>
                         <form action="{{route('authors.destroy', $author->id)}}" method="post">

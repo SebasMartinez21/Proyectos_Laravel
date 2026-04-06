@@ -21,19 +21,6 @@
                 <input type="date" name="born_date" id="a2" value="{{$author->born_date}}">
                 <br>
 
-                <label for="a3">Número de libros: </label>
-                <input type="number" name="quant_books" id="a3" value="{{$author->quant_books}}">
-                <br>
-                
-                <label for="a4">Libro referenciado</label>
-                <select name="id_book" id="a4">
-                    <option value="{{$author->id_book}}">ID de libro actual referenciado: {{$author->id_book}}</option>
-                    @foreach ($books as $book)
-                        <option value="{{$book->id}}">{{$book->name}}</option>
-                    @endforeach
-                </select>
-                <br>
-
                 <button class="btn btn-warning" type="submit">Editar autor</button>
             </form>
         </div>

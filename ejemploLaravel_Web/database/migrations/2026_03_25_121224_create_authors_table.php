@@ -15,9 +15,9 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->date('born_date');
-            $table->integer('quant_books');
-            $table->unsignedBigInteger('id_book');
-            $table->foreign('id_book')->references('id')->on('books');
+            // $table->integer('quant_books');
+            // $table->unsignedBigInteger('id_book');
+            // $table->foreign('id_book')->references('id')->on('books');
             $table->timestamps();
         });
     }
