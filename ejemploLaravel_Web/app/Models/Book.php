@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Models\AuthorBook;
 
 class Book extends Model
 {
@@ -10,4 +11,8 @@ class Book extends Model
         'created_at',
         'updated-at'
     ];
+
+    public function authorBooks(){
+        $this->hasMany(AuthorBook::class, 'id_book');
+    }
 }
