@@ -9,7 +9,7 @@ class AuthorController extends Controller
 {
     public function index(){
         $authors = Author::all();
-        return view('authors', compact('authors'));
+        return view('authors.index', compact('authors'));
     }
 
     public function create(){
@@ -39,7 +39,7 @@ class AuthorController extends Controller
 
     public function edit($id){
         $author = Author::find($id);
-        return view('authors_edit', compact('author'));
+        return view('authors.edit', compact('author'));
     }
 
     public function update(Request $request, $id){

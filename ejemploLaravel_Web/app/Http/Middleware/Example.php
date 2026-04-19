@@ -18,7 +18,7 @@ class Example
     {
         $cant_libros = Book::count();
 
-        if($cant_libros >= 9){
+        if($cant_libros >= 5){
             return $next($request); //Peticion aprobada (puede seguir)
         }else{
             return abort(403);
@@ -30,3 +30,6 @@ class Example
 // Pregunta
 // Valide en un Middleware si una tabla tiene más de 5 registros. En caso de ser verdad, se debe permitir el flujo de la peticion
 // y se debe retornar a una vista ordenados de manera descendente por el atributo "name" todos los datos 
+//1ro Crear el middleware php artisan make:middleware Nombre
+//2do registrarlo en bootstrap/app.php
+//Listo para su uso

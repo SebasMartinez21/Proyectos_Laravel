@@ -16,7 +16,7 @@ class AuthorBookController extends Controller{
         $author_books = AuthorBook::with(['author', 'book'])->get();    
 
 
-        return view('author_books', compact('author_books', 'books', 'authors'));
+        return view('author_books.index', compact('author_books', 'books', 'authors'));
     }
 
     public function create(){}
@@ -40,7 +40,7 @@ class AuthorBookController extends Controller{
         $books = Book::all();
         $author_book = AuthorBook::find($id);
 
-        return view('author_books_edit', compact('author_book', 'authors', 'books'));
+        return view('author_books.edit', compact('author_book', 'authors', 'books'));
     }
 
     public function update(Request $request, $id){

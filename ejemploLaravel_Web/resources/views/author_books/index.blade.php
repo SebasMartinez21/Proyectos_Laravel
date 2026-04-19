@@ -36,7 +36,7 @@
         </form>
         
         <h1>Listado de autores y libros</h1>
-        <table class=" table table-danger table-striped">
+        <table class=" table table-primary table-striped">
             <thead>
                 <tr>
                     <th>#</th>
