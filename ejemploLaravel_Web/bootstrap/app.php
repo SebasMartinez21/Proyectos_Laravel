@@ -14,6 +14,7 @@ return Application::configure(basePath: dirname(__DIR__))
         $middleware->alias([
             'example' => App\Http\Middleware\Example::class,
             'parcial' => App\Http\Middleware\Parcial::class,
+            'role' => App\Http\Middleware\Role::class,
         ]);
     })
     ->withExceptions(function (Exceptions $exceptions): void {
