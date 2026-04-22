@@ -16,7 +16,16 @@
 
                     {{ __('You are logged in!') }}
                 </div>
+
             </div>
+
+            <br>
+            <h1>Grafica con petición a una API y la ayuda de Plotly</h1>
+            <div name="grafica" id="grafica"></div>
+
+            <button type="button" onclick="api()">Graficar</button>
+
+            <script src="{{asset('js/grafica.js')}}"></script>
         </div>
     </div>
 </div>

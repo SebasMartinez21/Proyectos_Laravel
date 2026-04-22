@@ -29,7 +29,7 @@ Route::delete('/authors/{id}',[AuthorController::class, 'destroy'])->name('autho
 
 // CRUD tabla intermedia entre Libro y Autores por la Relación de N a N
 Route::get('/author_books',[AuthorBookController::class, 'index'])->name('author_books.index')->Middleware('role:estudiante'); // Validación de roles
-Route::get('/author_books/{id}',[AuthorBookController::class, 'edit'])->name('author_books.edit');
+Route::get('/author_books/{id}',[AuthorBookController::class, 'edit'])->name('author_books.edit');                            // Solo deja pasar a los usuarios con rol de estudiante
 Route::put('/author_books/{id}',[AuthorBookController::class, 'update'])->name('author_books.update');
 Route::post('/author_books',[AuthorBookController::class, 'store'])->name('author_books.store');
 Route::delete('/author_books/{id}',[AuthorBookController::class, 'destroy'])->name('author_books.destroy');
