@@ -17,7 +17,7 @@ class Role
     public function handle(Request $request, Closure $next, ...$roles): Response // ...$ : Para recibir un numero n de valores, en este caso de roles
     {
         $user = Auth::user();
-        if (!$user || !in_array($user->role->name, $roles)) { // La sentencia !in_array($user->role, $roles) Me verifica si el rol del usuario
+        if (!$user || !in_array($user->role->name, $roles)) { // La sentencia !in_array($user->role, $roles) Me verifica si el rol del usuario no está dentro de los permitidos en ...$roles
             return abort(403, 'Faah');                 // Los roles que esten en el arreglo $roles están permitidos en este caso, pueden seguir
         }
 
